@@ -51,13 +51,6 @@ class Examples extends FlatSpec {
     assert(
       Count[Dog](1) + Count[Dog](2) == Count[Dog](3)
     )
-
-    // But, mixing cats and dogs is: error: value + is not a member of Count[Dog]
-    import shapeless.test.illTyped
-    sealed trait Cat
-    illTyped {
-      "Count[Dog](1) + Count[Cat](1)"
-    }
   }
 
   it should "not permit mixing phantom types" in {
