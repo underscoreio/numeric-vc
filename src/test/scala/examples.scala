@@ -46,7 +46,6 @@ class Examples extends FlatSpec {
     import Numeric.Implicits._
 
     case class Count[T](value: Long)
-
     sealed trait Dog
 
     assert(
@@ -61,6 +60,20 @@ class Examples extends FlatSpec {
     }
   }
 
+  it should "not permit mixing phantom types" in {
 
+    import io.underscore.numeric.Implicits._
+    import Numeric.Implicits._
+    import shapeless.test.illTyped
+
+    case class Count[T](value: Long)
+    sealed trait Dog
+    sealed trait Cat
+
+    // Mixing cats and dogs is: error: value + is not a member of Count[Dog]
+    illTyped {
+      "Count[Dog](1) + Count[Cat](1)"
+    }
+  }
 
 }
