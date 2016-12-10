@@ -69,4 +69,19 @@ class Examples extends FlatSpec {
     }
   }
 
+  it should "demonstrate filtering" in {
+
+    import io.underscore.numeric.Implicits._
+    import Numeric.Implicits._
+    import scala.math.Ordering.Implicits._
+
+    case class Quantity(get: Int)
+
+    assert(
+      List( Quantity(1), Quantity(10), Quantity(100) )
+        .filter(_ > Quantity(5))
+        .length == 2
+    )
+  }
+
 }
