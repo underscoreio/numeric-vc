@@ -2,7 +2,7 @@
 
 ## Summary
 
-Provides instances of `Numeric[T]` for a value class.
+Provides instances of `Numeric[T]` for value classes.
 
 ## What?
 
