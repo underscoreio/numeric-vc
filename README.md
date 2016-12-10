@@ -11,10 +11,10 @@ I use value classes for this.
 Sometimes these are numeric, such as:
 
 ```scala
-case class Quantity(value: Int)
+case class Quantity(value: Int) extends AnyVal
 ```
 
-For numeric value classes, it is sometimes convenient to be able to do:
+For numeric value classes it is sometimes convenient to be able to do:
 
 ```scala
 Quantity(1) + Quantity(2)
@@ -24,13 +24,17 @@ This project enables basic numeric operations on numeric value classes.
 
 ## Usage
 
-TODO
+Yeah, so I've not published this yet.
+If you want me to, raise an issue.
 
+Otherwise, copy the source file (_numeric.scala_)
+and depend on shapeless (see _project/Dependencies.scala_).
 
 ## Mission Statement
 
-Provide basic numeric capabilities for value classes.
-This is not a units library.
+Provide core numeric capabilities for value classes.
+This is not a units library and nor is it a maths library.
+
 
 
 
