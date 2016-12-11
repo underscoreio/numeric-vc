@@ -1,5 +1,8 @@
 # Numeric Value Classes
 
+[![CircleCI](https://circleci.com/gh/underscoreio/numeric-vc.svg?style=svg)](https://circleci.com/gh/underscoreio/numeric-vc)
+[![Join the chat at https://gitter.im/underscoreio/scala](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/underscoreio/scala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Summary
 
 Provides instances of `Numeric[T]` for value classes.
