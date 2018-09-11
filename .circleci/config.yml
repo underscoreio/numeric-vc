@@ -1,12 +1,14 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/underscoreio/numeric-vc
+    parallelism: 1
+    shell: /bin/bash --login
     docker:
       - image: openjdk:8
     environment:
       SBT_VERSION: 0.13.13
     steps:
-      - run: echo 'export ARTIFACT_BUILD=$CIRCLE_PROJECT_REPONAME-$CIRCLE_BUILD_NUM.zip' >> $BASH_ENV
       - run:
           name: Get sbt binary
           command: |
@@ -29,7 +31,6 @@ jobs:
             - "~/.ivy2/cache"
             - "~/.sbt"
             - "~/.m2"
-
 
 workflows:
   version: 2
